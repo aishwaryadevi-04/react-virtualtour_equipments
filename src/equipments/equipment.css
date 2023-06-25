@@ -1,0 +1,45 @@
+.equipments-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.equipment-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+
+.equipment-item {
+
+    width: 250px;
+
+}
+
+.equipment-card {
+    margin: 40px;
+    width: 250px;
+
+
+}
+
+.equipment-item .img img {
+    width: 250px;
+    height: 220px;
+
+
+}
+
+.equipment-heading {
+    margin-top: 40px;
+    font-weight: bold;
+    width: 100%;
+    color: #001f4d;
+}
+
+.equipment-item .card-body {
+    flex: 0;
+    height: 120px;
+}

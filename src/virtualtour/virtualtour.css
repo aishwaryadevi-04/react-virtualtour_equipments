@@ -1,0 +1,179 @@
+.virtual-tour {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.image-container {
+    position: relative;
+    height: 300px;
+    margin-top: 200px;
+}
+
+.tour-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 75%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.tour-image.active {
+    opacity: 1;
+}
+
+
+
+
+.slider-dots {
+    position: absolute;
+    top: 440px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    position: relative;
+    border-radius: 5px;
+    width: 40px;
+    height: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid #555;
+    overflow: hidden;
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #bbb;
+    transition: background-color 0.5s ease;
+}
+
+.dot.active::before {
+    background-color: #001f4d;
+    animation: fillSlider 2s linear infinite;
+}
+
+@keyframes fillSlider {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 50%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+.row {
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+}
+
+.col-md-3 {
+    flex: 1;
+}
+
+.hover-image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .tour-image {
+        width: 100%;
+    }
+
+    .row {
+        flex-wrap: wrap;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 100px;
+    }
+
+
+}
+
+.image-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.image-text {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.image-heading {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+
+.hover-image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    color: #fff;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media (min-width: 576px) {
+    .image-wrapper:hover .hover-image {
+        opacity: 0.7;
+    }
+
+    .image-wrapper:hover .image-text {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 575px) {
+    .image-text {
+        opacity: 1;
+    }
+
+    .image-heading {
+        left: 50%;
+    }
+}
